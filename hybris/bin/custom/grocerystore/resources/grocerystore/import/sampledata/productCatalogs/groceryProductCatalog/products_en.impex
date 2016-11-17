@@ -1,0 +1,46 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#******************************This file is generated - please do not edit it. It will be regenerated after every build.********************************#
+# ImpEx template for Importing all Localisations for Products in the Grocery Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$productCatalogName=Grocery Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$lang=en
+
+
+# Update allProducts with localisations
+UPDATE Product;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang]
+ #;107701;;DC Car Battery Adapter;DC Car Battery Adapter;It's time to take a road trip and you want to capture the whole event with your HandyCam® camcorder but you know the battery isn't going to last the whole trip. Not a problem with the DCC-L50B Car Battery Adaptor. You can power your HandyCam® camcorder directly from your car's cigarette lighter socket and record your adventure non-stop!<br/>Includes the DK215 and DK235 connecting cords
+ #;1099285;;Monopod 100 - Floor Standing Monopod;Monopod 100 - Floor Standing Monopod, 64.5"" Height, 4.4 lb;Canon Monopod 100 for SLR Cameras & Lenses
+ #;1099413;;Macro Ring Lite MR-14EX;;
+;100001;;Oranges;Oranges;Complete description about Oranges goes here
+;100002;;Apples;Apples;Complete description about Apples goes here
+;100003;;Cantaloupe;Cantaloupe;Complete description about Cantaloupe goes here
+;100004;;Tomato;Tomato;Complete description about Tomato goes here
+;100005;;Baby Pants;Baby Pants;Complete description about Baby Pants goes here
+;100005_blue;;Baby Pants blue;Baby Pants blue;Complete description about Baby Pants blue goes here
+;100005_red;;Baby Pants red;Baby Pants red;Complete description about Baby Pants red goes here
+;100005_pink;;Baby Sens pink;Baby Sens pink;Complete description about Baby Sens pink goes here
+;100008;;Kids balls;Kids balls;Complete description about Kids balls goes here
+;100009;;Avant stage 2;Avant stage 2;Complete description about Avant stage 2 goes here
+;100010;;Gerbar food;Gerbar food;Complete description about Gerbar food goes here
+;100011;;Gerbar juice;Gerbar juice;Complete description about Gerbar juice goes here
+;100012;;Spirit Vodka;Spirit Vodka;Complete description about Spirit Vodka goes here
+;100016;;Spirit whisky;Spirit whisky;Complete description about Spirit whisky goes here
+;100013;;Packed food 1;Packed food 1;Complete description about Packed food 1 goes here
+;100014;;Canned food 1;Canned food 1;Complete description about Canned food 1 goes here
+;100015;;Packed food 2;Packed food 2;Complete description about Packed food 2 goes here
+;100017;;Canned food 2;Canned food 2;Complete description about Canned food 2 goes here
+

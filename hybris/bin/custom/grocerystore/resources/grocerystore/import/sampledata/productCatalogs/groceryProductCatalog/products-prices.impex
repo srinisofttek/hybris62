@@ -1,0 +1,79 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Grocery Store Prices
+#% impex.setLocale( Locale.GERMAN ); 
+
+$productCatalog=groceryProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+$taxGroup=Europe1PriceFactory_PTG(code)[default=jp-vat-full]
+
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+
+UPDATE Product;code[unique=true];$approved;$catalogVersion;$taxGroup
+;100001
+;100002
+;100003
+;100004
+;100005
+;100005_blue
+;100005_red
+;100005_pink
+;100008
+;100009
+;100010
+;100011
+;100012
+;100016
+;100013
+;100014
+;100015
+;100017
+
+
+INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
+;100001;pieces;USD;12;1;1;false
+;100002;pieces;USD;15;1;1;false
+;100003;pieces;USD;8;1;1;false
+;100004;pieces;USD;3;1;1;false
+;100005;pieces;USD;20;1;1;false
+;100005_blue;pieces;USD;20;1;1;false
+;100005_red;pieces;USD;21;1;1;false
+;100005_pink;pieces;USD;20;1;1;false
+;100008;pieces;USD;15.5;1;1;false
+;100009;pieces;USD;120;1;1;false
+;100010;pieces;USD;123.3;1;1;false
+;100011;pieces;USD;24.6;1;1;false
+;100012;pieces;USD;86.7;1;1;false
+;100016;pieces;USD;231.4;1;1;false
+;100013;pieces;USD;34.5;1;1;false
+;100014;pieces;USD;32.7;1;1;false
+;100015;pieces;USD;53.5;1;1;false
+;100017;pieces;USD;72.6;1;1;false
+;100001;pieces;JPY;240;1;1;false
+;100002;pieces;JPY;300;1;1;false
+;100003;pieces;JPY;160;1;1;false
+;100004;pieces;JPY;60;1;1;false
+;100005;pieces;JPY;400;1;1;false
+;100005_blue;pieces;JPY;400;1;1;false
+;100005_red;pieces;JPY;420;1;1;false
+;100005_pink;pieces;JPY;400;1;1;false
+;100008;pieces;JPY;310;1;1;false
+;100009;pieces;JPY;2400;1;1;false
+;100010;pieces;JPY;2466;1;1;false
+;100011;pieces;JPY;492;1;1;false
+;100012;pieces;JPY;1734;1;1;false
+;100016;pieces;JPY;4628;1;1;false
+;100013;pieces;JPY;690;1;1;false
+;100014;pieces;JPY;654;1;1;false
+;100015;pieces;JPY;1070;1;1;false
+;100017;pieces;JPY;1452;1;1;false

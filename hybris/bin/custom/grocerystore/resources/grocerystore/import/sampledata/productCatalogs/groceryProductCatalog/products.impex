@@ -1,0 +1,49 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Products into Grocery Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$productCatalogName=Grocery Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='check']
+
+# Insert Products
+INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved
+;100001;100501,brand_1;California;;pieces;7890000000001
+;100002;100501,brand_1;California;;pieces;7890000000002
+;100003;100501,brand_1;California;;pieces;7890000000003
+;100004;100502,brand_2;Canada;;pieces;7890000000004
+;100005;1020,brand_3;Gerbar;;pieces;7890000000005
+;100005_blue;1020,brand_3;Gerbar;;pieces;7890000000005
+;100005_red;1020,brand_3;Gerbar;;pieces;7890000000005
+;100005_pink;1020,brand_3;Gerbar;;pieces;7890000000005
+;100008;1020,brand_3;Gerbar;;pieces;7890000000006
+;100009;1020,brand_3;Gerbar;;pieces;7890000000007
+;100010;1020,brand_3;Gerbar;;pieces;7890000000008
+;100011;1020,brand_3;Gerbar;;pieces;7890000000009
+;100012;1007,brand_4;Royal;;pieces;7890000000010
+;100016;1007,brand_4;Royal;;pieces;7890000000011
+;100013;1023,brand_5;Kraft;;pieces;7890000000012
+;100014;1023,brand_5;Kraft;;pieces;7890000000013
+;100015;1023,brand_5;Kraft;;pieces;7890000000014
+;100017;1023,brand_5;Kraft;;pieces;7890000000015
+
+
+
+INSERT_UPDATE GroceryColorVariantProduct;code[unique=true];$baseProduct;ean;unit(code);color;$supercategories;approvalstatus(code)[default='approved'];$catalogVersion
+;100005_blue;100005;7890000000005;pieces;Blue;
+;100005_red;100005;7890000000005;pieces;Red;
+;100005_pink;100005;7890000000005;pieces;Pink;
+

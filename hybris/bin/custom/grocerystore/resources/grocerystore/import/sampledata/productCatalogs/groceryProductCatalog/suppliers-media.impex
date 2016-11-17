@@ -1,0 +1,36 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Supplier Media into Grocery Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$productCatalogName=Grocery Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$superCategories=superCategories(code, $catalogVersion)
+$thumbnail=thumbnail(code, $catalogVersion)
+$siteResource=jar:de.hybris.platform.grocerystore.constants.GrocerystoreConstants&/grocerystore/import/sampledata/productCatalogs/$productCatalog
+
+
+INSERT_UPDATE Media;code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];$catalogVersion
+;/thumbs/SUP1.jpg;SUP1.jpg;$siteResource/images/thumbs/SUP1.jpg
+;/thumbs/SUP2.jpg;SUP2.jpg;$siteResource/images/thumbs/SUP2.jpg
+;/thumbs/SUP5.jpg;SUP3.jpg;$siteResource/images/thumbs/SUP3.jpg
+;/thumbs/SUP1.jpg;SUP4.jpg;$siteResource/images/thumbs/SUP4.jpg
+;/thumbs/SUP2.jpg;SUP5.jpg;$siteResource/images/thumbs/SUP5.jpg
+
+UPDATE Category;code[unique=true];$thumbnail;allowedPrincipals(uid)[default='customergroup'];$catalogVersion
+ ;brand_1;/thumbs/SUP1.jpg
+ ;brand_2;/thumbs/SUP2.jpg
+ ;brand_3;/thumbs/SUP3.jpg
+ ;brand_4;/thumbs/SUP4.jpg
+ ;brand_5;/thumbs/SUP5.jpg
+

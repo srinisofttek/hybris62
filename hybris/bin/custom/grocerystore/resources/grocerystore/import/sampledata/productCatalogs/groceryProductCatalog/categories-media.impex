@@ -1,0 +1,133 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Category Media into Grocery Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$productCatalogName=Grocery Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$siteResource=jar:de.hybris.platform.grocerystore.constants.GrocerystoreConstants&/grocerystore/import/sampledata/productCatalogs/$productCatalog
+
+
+# Import Category Media
+INSERT_UPDATE Media;code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];$catalogVersion
+;/img/low_pic/1015-0001.jpg;1015-0001.jpg;$siteResource/images/img/low_pic/1015-0001.jpg;
+;/img/low_pic/1016-0001.jpg;1016-0001.jpg;$siteResource/images/img/low_pic/1016-0001.jpg;
+;/img/low_pic/1017-0001.jpg;1017-0001.jpg;$siteResource/images/img/low_pic/1017-0001.jpg;
+;/img/low_pic/1018-0001.jpg;1018-0001.jpg;$siteResource/images/img/low_pic/1018-0001.jpg;
+;/img/low_pic/1019-0001.jpg;1019-0001.jpg;$siteResource/images/img/low_pic/1019-0001.jpg;
+;/img/low_pic/1020-0001.jpg;1020-0001.jpg;$siteResource/images/img/low_pic/1020-0001.jpg;
+;/img/low_pic/1021-0001.jpg;1021-0001.jpg;$siteResource/images/img/low_pic/1021-0001.jpg;
+;/img/low_pic/1022-0001.jpg;1022-0001.jpg;$siteResource/images/img/low_pic/1022-0001.jpg;
+;/img/low_pic/1001-0001.jpg;1001-0001.jpg;$siteResource/images/img/low_pic/1001-0001.jpg;
+;/img/low_pic/1002-0001.jpg;1002-0001.jpg;$siteResource/images/img/low_pic/1002-0001.jpg;
+;/img/low_pic/1003-0001.jpg;1003-0001.jpg;$siteResource/images/img/low_pic/1003-0001.jpg;
+;/img/low_pic/1004-0001.jpg;1004-0001.jpg;$siteResource/images/img/low_pic/1004-0001.jpg;
+;/img/low_pic/100401-0001.jpg;100401-0001.jpg;$siteResource/images/img/low_pic/100401-0001.jpg;
+;/img/low_pic/100402-0001.jpg;100402-0001.jpg;$siteResource/images/img/low_pic/100402-0001.jpg;
+;/img/low_pic/100403-0001.jpg;100403-0001.jpg;$siteResource/images/img/low_pic/100403-0001.jpg;
+;/img/low_pic/100404-0001.jpg;100404-0001.jpg;$siteResource/images/img/low_pic/100404-0001.jpg;
+;/img/low_pic/100405-0001.jpg;100405-0001.jpg;$siteResource/images/img/low_pic/100405-0001.jpg;
+;/img/low_pic/100406-0001.jpg;100406-0001.jpg;$siteResource/images/img/low_pic/100406-0001.jpg;
+;/img/low_pic/1005-0001.jpg;1005-0001.jpg;$siteResource/images/img/low_pic/1005-0001.jpg;
+;/img/low_pic/100501-0001.jpg;100501-0001.jpg;$siteResource/images/img/low_pic/100501-0001.jpg;
+;/img/low_pic/100502-0001.jpg;100502-0001.jpg;$siteResource/images/img/low_pic/100502-0001.jpg;
+;/img/low_pic/1006-0001.jpg;1006-0001.jpg;$siteResource/images/img/low_pic/1006-0001.jpg;
+;/img/low_pic/100601-0001.jpg;100601-0001.jpg;$siteResource/images/img/low_pic/100601-0001.jpg;
+;/img/low_pic/100602-0001.jpg;100602-0001.jpg;$siteResource/images/img/low_pic/100602-0001.jpg;
+;/img/low_pic/100603-0001.jpg;100603-0001.jpg;$siteResource/images/img/low_pic/100603-0001.jpg;
+;/img/low_pic/100604-0001.jpg;100604-0001.jpg;$siteResource/images/img/low_pic/100604-0001.jpg;
+;/img/low_pic/1007-0001.jpg;1007-0001.jpg;$siteResource/images/img/low_pic/1007-0001.jpg;
+;/img/low_pic/1008-0001.jpg;1008-0001.jpg;$siteResource/images/img/low_pic/1008-0001.jpg;
+;/img/low_pic/1008-0001.jpg;1008-0001.jpg;$siteResource/images/img/low_pic/1008-0001.jpg;
+;/img/low_pic/1010-0001.jpg;1010-0001.jpg;$siteResource/images/img/low_pic/1010-0001.jpg;
+;/img/low_pic/101001-0001.jpg;101001-0001.jpg;$siteResource/images/img/low_pic/101001-0001.jpg;
+;/img/low_pic/1011-0001.jpg;1011-0001.jpg;$siteResource/images/img/low_pic/1011-0001.jpg;
+;/img/low_pic/1012-0001.jpg;1012-0001.jpg;$siteResource/images/img/low_pic/1012-0001.jpg;
+;/img/low_pic/1013-0001.jpg;1013-0001.jpg;$siteResource/images/img/low_pic/1013-0001.jpg;
+;/img/low_pic/1014-0001.jpg;1014-0001.jpg;$siteResource/images/img/low_pic/1014-0001.jpg;
+;/thumbs/CAT1015.jpg;CAT1015.jpg;$siteResource/images/thumbs/CAT1015.jpg;
+;/thumbs/CAT1016.jpg;CAT1016.jpg;$siteResource/images/thumbs/CAT1016.jpg;
+;/thumbs/CAT1017.jpg;CAT1017.jpg;$siteResource/images/thumbs/CAT1017.jpg;
+;/thumbs/CAT1018.jpg;CAT1018.jpg;$siteResource/images/thumbs/CAT1018.jpg;
+;/thumbs/CAT1019.jpg;CAT1019.jpg;$siteResource/images/thumbs/CAT1019.jpg;
+;/thumbs/CAT1020.jpg;CAT1020.jpg;$siteResource/images/thumbs/CAT1020.jpg;
+;/thumbs/CAT1021.jpg;CAT1021.jpg;$siteResource/images/thumbs/CAT1021.jpg;
+;/thumbs/CAT1022.jpg;CAT1022.jpg;$siteResource/images/thumbs/CAT1022.jpg;
+;/thumbs/CAT1001.jpg;CAT1001.jpg;$siteResource/images/thumbs/CAT1001.jpg;
+;/thumbs/CAT1002.jpg;CAT1002.jpg;$siteResource/images/thumbs/CAT1002.jpg;
+;/thumbs/CAT1003.jpg;CAT1003.jpg;$siteResource/images/thumbs/CAT1003.jpg;
+;/thumbs/CAT1004.jpg;CAT1004.jpg;$siteResource/images/thumbs/CAT1004.jpg;
+;/thumbs/CAT100401.jpg;CAT100401.jpg;$siteResource/images/thumbs/CAT100401.jpg;
+;/thumbs/CAT100402.jpg;CAT100402.jpg;$siteResource/images/thumbs/CAT100402.jpg;
+;/thumbs/CAT100403.jpg;CAT100403.jpg;$siteResource/images/thumbs/CAT100403.jpg;
+;/thumbs/CAT100404.jpg;CAT100404.jpg;$siteResource/images/thumbs/CAT100404.jpg;
+;/thumbs/CAT100405.jpg;CAT100405.jpg;$siteResource/images/thumbs/CAT100405.jpg;
+;/thumbs/CAT100406.jpg;CAT100406.jpg;$siteResource/images/thumbs/CAT100406.jpg;
+;/thumbs/CAT1005.jpg;CAT1005.jpg;$siteResource/images/thumbs/CAT1005.jpg;
+;/thumbs/CAT100501.jpg;CAT100501.jpg;$siteResource/images/thumbs/CAT100501.jpg;
+;/thumbs/CAT100502.jpg;CAT100502.jpg;$siteResource/images/thumbs/CAT100502.jpg;
+;/thumbs/CAT1006.jpg;CAT1006.jpg;$siteResource/images/thumbs/CAT1006.jpg;
+;/thumbs/CAT100601.jpg;CAT100601.jpg;$siteResource/images/thumbs/CAT100601.jpg;
+;/thumbs/CAT100602.jpg;CAT100602.jpg;$siteResource/images/thumbs/CAT100602.jpg;
+;/thumbs/CAT100603.jpg;CAT100603.jpg;$siteResource/images/thumbs/CAT100603.jpg;
+;/thumbs/CAT100604.jpg;CAT100604.jpg;$siteResource/images/thumbs/CAT100604.jpg;
+;/thumbs/CAT1007.jpg;CAT1007.jpg;$siteResource/images/thumbs/CAT1007.jpg;
+;/thumbs/CAT1008.jpg;CAT1008.jpg;$siteResource/images/thumbs/CAT1008.jpg;
+;/thumbs/CAT1008.jpg;CAT1008.jpg;$siteResource/images/thumbs/CAT1008.jpg;
+;/thumbs/CAT1010.jpg;CAT1010.jpg;$siteResource/images/thumbs/CAT1010.jpg;
+;/thumbs/CAT101001.jpg;CAT101001.jpg;$siteResource/images/thumbs/CAT101001.jpg;
+;/thumbs/CAT1011.jpg;CAT1011.jpg;$siteResource/images/thumbs/CAT1011.jpg;
+;/thumbs/CAT1012.jpg;CAT1012.jpg;$siteResource/images/thumbs/CAT1012.jpg;
+;/thumbs/CAT1013.jpg;CAT1013.jpg;$siteResource/images/thumbs/CAT1013.jpg;
+;/thumbs/CAT1014.jpg;CAT1014.jpg;$siteResource/images/thumbs/CAT1014.jpg;
+
+
+UPDATE Category;code[unique=true];$thumbnail;$picture;allowedPrincipals(uid)[default='customergroup'];$catalogVersion
+;1015;/thumbs/CAT1015.jpg;/img/low_pic/1015-0001.jpg
+;1016;/thumbs/CAT1016.jpg;/img/low_pic/1016-0001.jpg
+;1017;/thumbs/CAT1017.jpg;/img/low_pic/1017-0001.jpg
+;1018;/thumbs/CAT1018.jpg;/img/low_pic/1018-0001.jpg
+;1019;/thumbs/CAT1019.jpg;/img/low_pic/1019-0001.jpg
+;1020;/thumbs/CAT1020.jpg;/img/low_pic/1020-0001.jpg
+;1021;/thumbs/CAT1021.jpg;/img/low_pic/1021-0001.jpg
+;1022;/thumbs/CAT1022.jpg;/img/low_pic/1022-0001.jpg
+;1001;/thumbs/CAT1001.jpg;/img/low_pic/1001-0001.jpg
+;1002;/thumbs/CAT1002.jpg;/img/low_pic/1002-0001.jpg
+;1003;/thumbs/CAT1003.jpg;/img/low_pic/1003-0001.jpg
+;1004;/thumbs/CAT1004.jpg;/img/low_pic/1004-0001.jpg
+;100401;/thumbs/CAT100401.jpg;/img/low_pic/100401-0001.jpg
+;100402;/thumbs/CAT100402.jpg;/img/low_pic/100402-0001.jpg
+;100403;/thumbs/CAT100403.jpg;/img/low_pic/100403-0001.jpg
+;100404;/thumbs/CAT100404.jpg;/img/low_pic/100404-0001.jpg
+;100405;/thumbs/CAT100405.jpg;/img/low_pic/100405-0001.jpg
+;100406;/thumbs/CAT100406.jpg;/img/low_pic/100406-0001.jpg
+;1005;/thumbs/CAT1005.jpg;/img/low_pic/1005-0001.jpg
+;100501;/thumbs/CAT100501.jpg;/img/low_pic/100501-0001.jpg
+;100502;/thumbs/CAT100502.jpg;/img/low_pic/100502-0001.jpg
+;1006;/thumbs/CAT1006.jpg;/img/low_pic/1006-0001.jpg
+;100601;/thumbs/CAT100601.jpg;/img/low_pic/100601-0001.jpg
+;100602;/thumbs/CAT100602.jpg;/img/low_pic/100602-0001.jpg
+;100603;/thumbs/CAT100603.jpg;/img/low_pic/100603-0001.jpg
+;100604;/thumbs/CAT100604.jpg;/img/low_pic/100604-0001.jpg
+;1007;/thumbs/CAT1007.jpg;/img/low_pic/1007-0001.jpg
+;1008;/thumbs/CAT1008.jpg;/img/low_pic/1008-0001.jpg
+;1008;/thumbs/CAT1008.jpg;/img/low_pic/1008-0001.jpg
+;1010;/thumbs/CAT1010.jpg;/img/low_pic/1010-0001.jpg
+;101001;/thumbs/CAT101001.jpg;/img/low_pic/101001-0001.jpg
+;1011;/thumbs/CAT1011.jpg;/img/low_pic/1011-0001.jpg
+;1012;/thumbs/CAT1012.jpg;/img/low_pic/1012-0001.jpg
+;1013;/thumbs/CAT1013.jpg;/img/low_pic/1013-0001.jpg
+;1014;/thumbs/CAT1014.jpg;/img/low_pic/1014-0001.jpg
+

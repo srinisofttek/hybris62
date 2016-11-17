@@ -1,0 +1,39 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Product Classifications into Grocery Store
+
+#% impex.setLocale(Locale.ENGLISH);
+
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$productCatalogName=Grocery Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$clAttrModifiers=system='GroceryClassification',version='1.0',translator=de.hybris.platform.catalog.jalo.classification.impex.ClassificationAttributeTranslator,lang=en
+
+
+$feature1_1=@Tripod legs, 1868[$clAttrModifiers];  # Tripod legs
+$feature2_1=@Mounting, 1867[$clAttrModifiers];  # Mounting
+$feature3_1=@Colour of product, 1766[$clAttrModifiers];  # Colour of product
+$feature4_1=@Tripod head, 1869[$clAttrModifiers];  # Tripod head
+$feature6_1=@Special features, 86[$clAttrModifiers];  # Special features
+$feature7_1=@Material, 898[$clAttrModifiers];  # Material
+$feature8_1=@Source data-sheet, 6617[$clAttrModifiers];  # Source data-sheet
+UPDATE Product;code[unique=true];$feature1_1;$feature2_1;$feature3_1;$feature4_1;$feature6_1;$feature7_1;$feature8_1;$catalogVersion;
+ ;100001;<ignore>;<ignore>;Silver/Black;<ignore>;<ignore>;<ignore>;ICEcat.biz;
+ ;100002;3 leg(s);Floor-standing;<ignore>;<ignore>;<ignore>;<ignore>;ICEcat.biz;
+# ;23355;<ignore>;Quick-release Mounting Shoe;<ignore>;Oil Friction Head;Counter Balance Function;<ignore>;ICEcat.biz;
+# ;29925;3 leg(s);Floor-standing;Silver;<ignore>;"3-way Tripod Head Positioning; Quick lock";Aluminum, ABS, POM, and PA;ICEcat.biz
+# ;3429337;3;<ignore>;Black;<ignore>;<ignore>;Rubber;ICEcat.biz;
+# ;454831;<ignore>;<ignore>;Black;<ignore>;<ignore>;<ignore>;ICEcat.biz;
+# ;572461;<ignore>;<ignore>;Grey;<ignore>;<ignore>;<ignore>;ICEcat.biz;
+# ;932577;hard anodized ;<ignore>;Silver/Black;3-way adjustable;Compatible with the following KODAK products- Z812 IS/C300/C310/C315/C330/C340/C360/C433/C503/C513/C530/C533/C603/C613/C633/C643/C653/C663/C703/C713/C743/C763/C813/C875/CD33/CD40/CD43/CX4200/CX4210/CX4230/CX4300/CX4310/CX6200/CX6230/CX6330/CX6445/CX7220/CX7300/CX7310/CX7330/CX7430/CX7525/CX7530/DC120/DC200/DC200 Plus/DC210/DC210 IS/Z885/ZD710 Plus/DC215/DC220/DC240/DC25/DC260/DC265/DC280/DC290/DC3400/DC3800/DC40/DC4800/DC50/DC5000/DX3500/DX3600/DX3900/DX4330/DX4530/DX4900/DX6340/DX6440/DX6490/DX7440/DX7590/DX7630/EASYSHARE-ONE/LS420/LS443/LS633/M1033/M753/M763/M853/M863/M873/M883/M893 IS/P712/P850/P880/V1003/V1073/V1233/V1253/V1273/V530/V550/V570/V603/V610/V705/V803/Z1085 IS/Z1275/Z1285/Z612/Z650/Z700/Z710/Z712 IS/Z730/Z740/Z7590/Z760/Z8612  \n\n;Aluminium;ICEcat.biz;
+

@@ -1,0 +1,177 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Products Store Stock Levels into Grocery Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$productCatalogName=Grocery Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$vendor=electro
+
+
+# Create some Warehouses for the Vendor
+INSERT_UPDATE Warehouse;code[unique=true];vendor(code)[default=$vendor];default[default='false']
+;Nakano
+;Shinbashi
+;Koto
+;Misato
+;Matsudo
+;Ichikawa
+;Choshi
+;Chiba
+;Yokosuka
+;Tokio Cerulean Tower Tokyu Hotel
+;Tokio Flexstay Nippori Inn
+;Tokio Hotel Metropolitan Tokyo
+;Tokio Dormy Inn Tokyo Hatchobori
+;Tokio Park Hotel Tokyo
+;Yokohama Sakuragicho Washington Hotel
+;Yokohama Shin Yokohama Prince Hotel
+;Yokohama Comfort Hotel Yokohama Kannai
+;Yokohama Hotel New Grand
+;Yokohama Hotel JAL City Kannai Yokohama
+;Osaka Hilton Osaka Hotel
+;Osaka Crowne Plaza Hotel Ana Osaka
+;Osaka Ramada Osaka
+;Osaka Cross Hotel Osaka
+;Osaka Best Western Hotel Fino Osaka Shinsaibashi
+;Nagoya Hilton Nagoya Hotel
+;Nagoya Marriott Nagoya
+;Nagoya Crowne Plaza Ana Grand Court Nagoya
+;Nagoya The Westin Nagoya Castle
+;Nagoya Royal Park Inn Nagoya
+;Sapporo Ana Hotel Sapporo
+;Sapporo Best Western Hotel Sapporo Nakajima Koen
+;Sapporo Sheraton Sapporo Hotel
+;Sapporo Hotel Resol Trinity Sapporo
+;Sapporo Hotel Sunroute Sapporo
+;Kobe Hotel Monterey Amalie
+;Kobe Hotel Monterey Kobe
+;Kobe Sannomiya Terminal Hotel
+;Kobe Bay Sheraton Hotel and Towers
+;Kobe the b
+;Fukuoka Hotel Monterey La Soeur Fukuoka
+;Fukuoka Hilton Fukuoka Sea Hawk
+;Fukuoka Best Western Fukuoka Nakasu Inn
+;Fukuoka Canal City Fukuoka Washington Hotel
+;Fukuoka Hotel Nikko Fukuoka
+;Kawasaki Mets Kawasaki Hotel
+;Kawasaki Mets Mizonokuchi Hotel
+;Kawasaki Hotel Sunroute Kawasaki
+;Kawasaki Pearl Hotel Kawasaki
+;Kawasaki Grand Hotel
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Nakano',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+;300;;;0;0;100501;0
+;0;;;0;0;100501;0
+;100;;;0;0;100501;0
+;20;;;0;0;100502;0
+;33;;;0;0;1020;0
+;55;;;0;0;1020;0
+;99;;;0;0;1020;0
+;22;;;0;0;1020;0
+;6;;;0;0;1020;0
+;2;;;0;0;1020;0
+;1;;;0;0;1020;0
+;634;;;0;0;1020;0
+;6;;;0;0;1007;0
+;76;;;0;0;1007;0
+;44;;;0;0;1023;0
+;22;;;0;0;1023;0
+;44;;;0;0;1023;0
+;88;;;0;0;1023;0
+
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Shinbashi',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+;300;;;0;0;100501;0
+;0;;;0;0;100501;0
+;100;;;0;0;100501;0
+;20;;;0;0;100502;0
+;33;;;0;0;1020;0
+;55;;;0;0;1020;0
+;99;;;0;0;1020;0
+;22;;;0;0;1020;0
+;6;;;0;0;1020;0
+;2;;;0;0;1020;0
+;1;;;0;0;1020;0
+;634;;;0;0;1020;0
+;6;;;0;0;1007;0
+;76;;;0;0;1007;0
+;44;;;0;0;1023;0
+;22;;;0;0;1023;0
+;44;;;0;0;1023;0
+;88;;;0;0;1023;0
+
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Koto',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+;300;;;0;0;100501;0
+;0;;;0;0;100501;0
+;100;;;0;0;100501;0
+;20;;;0;0;100502;0
+;33;;;0;0;1020;0
+;55;;;0;0;1020;0
+;99;;;0;0;1020;0
+;22;;;0;0;1020;0
+;6;;;0;0;1020;0
+;2;;;0;0;1020;0
+;1;;;0;0;1020;0
+;634;;;0;0;1020;0
+;6;;;0;0;1007;0
+;76;;;0;0;1007;0
+;44;;;0;0;1023;0
+;22;;;0;0;1023;0
+;44;;;0;0;1023;0
+;88;;;0;0;1023;0
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Misato',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+;300;;;0;0;100501;0
+;0;;;0;0;100501;0
+;100;;;0;0;100501;0
+;20;;;0;0;100502;0
+;33;;;0;0;1020;0
+;55;;;0;0;1020;0
+;99;;;0;0;1020;0
+;22;;;0;0;1020;0
+;6;;;0;0;1020;0
+;2;;;0;0;1020;0
+;1;;;0;0;1020;0
+;634;;;0;0;1020;0
+;6;;;0;0;1007;0
+;76;;;0;0;1007;0
+;44;;;0;0;1023;0
+;22;;;0;0;1023;0
+;44;;;0;0;1023;0
+;88;;;0;0;1023;0
+
+INSERT_UPDATE StockLevel;available;warehouse(code)[default='Matsudo',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+;300;;;0;0;100501;0
+;0;;;0;0;100501;0
+;100;;;0;0;100501;0
+;20;;;0;0;100502;0
+;33;;;0;0;1020;0
+;55;;;0;0;1020;0
+;99;;;0;0;1020;0
+;22;;;0;0;1020;0
+;6;;;0;0;1020;0
+;2;;;0;0;1020;0
+;1;;;0;0;1020;0
+;634;;;0;0;1020;0
+;6;;;0;0;1007;0
+;76;;;0;0;1007;0
+;44;;;0;0;1023;0
+;22;;;0;0;1023;0
+;44;;;0;0;1023;0
+;88;;;0;0;1023;0
+
+# Venu: Removed stock of rest of all warehouse to make it quick. 
+#INSERT_UPDATE StockLevel;available;warehouse(code)[default='Ichikawa',unique=true];inStockStatus(code)[default='notSpecified'];overSelling;preOrder;productCode[unique=true];reserved
+#;6;;;0;0;23355;0

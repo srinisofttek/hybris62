@@ -1,0 +1,64 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Importing Product taxex into Grocery Store
+
+# Insert Product taxes for US
+INSERT_UPDATE ProductTaxCode;productCode[unique=true];taxCode;taxArea[unique=true]
+;100001;PC080601;US;
+;100002;P0000000;US;
+;100003;P0000000;US;
+;100004;P0000000;US;
+;100005;PC080601;US;
+;100005_blue;PC080601;US;
+;100005_red;PC080601;US;
+;100005_pink;PE070000;US;
+;100008;PE070000;US;
+;100009;PC080601;US;
+;100010;PC080601;US;
+;100011;PC080601;US;
+;100012;PE070000;US;
+;100016;PE070000;US;
+;100013;PC080601;US;
+;100014;P0000000;US;
+;100015;P0000000;US;
+;100017;P0000000;US;
+
+
+# Insert Product taxes for JP
+INSERT_UPDATE ProductTaxCode;productCode[unique=true];taxCode;taxArea[unique=true]
+
+
+# Insert Product taxes for GB
+INSERT_UPDATE ProductTaxCode;productCode[unique=true];taxCode;taxArea[unique=true]
+
+
+
+# Insert Product taxes fo FR
+INSERT_UPDATE ProductTaxCode;productCode[unique=true];taxCode;taxArea[unique=true]
+
+
+# Insert Product taxes for PL
+INSERT_UPDATE ProductTaxCode;productCode[unique=true];taxCode;taxArea[unique=true]
+
+
+# Insert Product taxes for DE
+INSERT_UPDATE ProductTaxCode;productCode[unique=true];taxCode;taxArea[unique=true]
+
+
+# Insert Product taxes for CA
+INSERT_UPDATE ProductTaxCode;productCode[unique=true];taxCode;taxArea[unique=true]
+
+
+# Insert Product taxes for CN
+INSERT_UPDATE ProductTaxCode;productCode[unique=true];taxCode;taxArea[unique=true]
+
+

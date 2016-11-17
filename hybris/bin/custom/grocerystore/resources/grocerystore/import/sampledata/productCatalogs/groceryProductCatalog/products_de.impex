@@ -1,0 +1,43 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#******************************This file is generated - please do not edit it. It will be regenerated after every build.********************************#
+# ImpEx template for Importing all Localisations for Products in the Grocery Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$productCatalogName=Grocery Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$lang=de
+
+
+# Update allProducts with localisations
+UPDATE Product;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang]
+;100001;;Oranges;Oranges;Oranges
+;100002;;Apples;Apples;Apples
+;100003;;Cantaloupe;Cantaloupe;Cantaloupe
+;100004;;Tomato;Tomato;Tomato
+;100005;;Baby Pants;Baby Pants;Baby Pants
+;100005_blue;;Baby Pants blue;Baby Pants blue;Baby Pants blue
+;100005_red;;Baby Pants red;Baby Pants red;Baby Pants red
+;100005_pink;;Baby Sens pink;Baby Sens pink;Baby Sens pink
+;100008;;Kids balls;Kids balls;Kids balls
+;100009;;Avant stage #2;Avant stage #2;Avant stage #2
+;100010;;Gerbar food;Gerbar food;Gerbar food
+;100011;;Gerbar juice;Gerbar juice;Gerbar juice
+;100012;;Spirit Vodka;Spirit Vodka;Spirit Vodka
+;100016;;Spirit whisky;Spirit whisky;Spirit whisky
+;100013;;Packed food 1;Packed food 1;Packed food 1
+;100014;;Canned food 1;Canned food 1;Canned food 1
+;100015;;Packed food 2;Packed food 2;Packed food 2
+;100017;;Canned food 2;Canned food 2;Canned food 2
+

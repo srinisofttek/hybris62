@@ -1,0 +1,36 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+# ImpEx for Related Products into Grocery Store
+
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$productCatalogName=Grocery Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='check']
+
+# Insert Product References (cross cell, up sell, accessories)
+INSERT_UPDATE ProductReference;source(code,$catalogVersion)[unique=true];target(code,$catalogVersion)[unique=true];referenceType(code);active;preselected
+ ;100001;100002;SIMILAR;true;false
+ ;100001;100003;SIMILAR;true;false
+ ;100002;100001;SIMILAR;true;false
+ ;100002;100003;SIMILAR;true;false
+ ;100003;100001;SIMILAR;true;false
+ ;100004;100001;SIMILAR;true;false
+ ;100004;100002;ACCESSORIES;true;false
+ ;100005;100008;ACCESSORIES;true;false
+ ;100012;100016;SIMILAR;true;false
+ ;100016;100012;SIMILAR;true;false
+ 
+ 
+ 

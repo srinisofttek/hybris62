@@ -1,0 +1,68 @@
+# -----------------------------------------------------------------------
+# [y] hybris Platform
+#
+# Copyright (c) 2000-2016 SAP SE or an SAP affiliate company.
+# All rights reserved.
+#
+# This software is the confidential and proprietary information of SAP
+# ("Confidential Information"). You shall not disclose such Confidential
+# Information and shall use it only in accordance with the terms of the
+# license agreement you entered into with SAP.
+# -----------------------------------------------------------------------
+#******************************This file is generated - please do not edit it. It will be regenerated after every build.********************************#
+# ImpEx for Importing Categories into Grocery Store 
+
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$productCatalogName=Grocery Product Catalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+
+# Language
+$lang=en
+
+
+# Create Categories
+UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
+;1;;Open Catalogue;
+;1015;;Electronics & Office;
+;1016;;Entertainment & Books;
+;1017;;Furniture;
+;1018;;Home Improvement;
+;1019;;Apparel Footwear;
+;1020;;Baby & Toddler;
+;1021;;Toys & Video Games;
+;1022;;Food Household & Pets;
+;1001;;Grocery;
+;1002;;Beverages;
+;1003;;Meat and Deli;
+;1004;;Pets;
+;100401;;Dogs;
+;100402;;Cats;
+;100403;;Fish;
+;100404;;Birds;
+;100405;;Small Animals;
+;100406;;General;
+;1005;;Fruites and Vegetables;
+;100501;;Fruites;
+;100502;;Vegetables;
+;1006;;Cleaning;
+;100601;;Laundry Room;
+;100602;;Kitchen;
+;100603;;Bathroom;
+;100604;;All;
+;1007;;Sprits and Cigaretes;
+;1008;;Snacks & Cookies;
+;1009;;Food Gifts;
+;1023;;Packed & Canned;
+;1010;;Pharmacy Health & Beauty;
+;101001;;Pharmacy;
+;1011;;Sports Fitness & Outdoors;
+;1012;;Auto & Tires;
+;1013;;Photos;
+;1014;;Christmas Decor & Sewing;
+
+
+
+
+

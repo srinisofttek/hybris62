@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
   ~ [y] hybris Platform
-  ~ test comments by srini
+  ~ 
   ~ Copyright (c) 2000-2016 SAP SE
   ~ All rights reserved.
   ~ 
@@ -10,7 +10,7 @@
   ~ Confidential Information and shall use it only in accordance with the 
   ~ terms of the license agreement you entered into with SAP Hybris.
   -->
-<!-- venu comments -->
+
 <project name="grocerystore" default="all">
 	<property file="platformhome.properties" />
 
